@@ -1,0 +1,87 @@
+<vbox id="ai-zotero-preferences-pane"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	onload="AIZoteroPreferences.init()"
+	onunload="AIZoteroPreferences.uninit()">
+	<linkset>
+		<html:link rel="localization" href="ai-zotero.ftl"/>
+	</linkset>
+
+	<vbox class="main-section ai-zotero-preferences" role="group" aria-labelledby="ai-zotero-settings-heading">
+		<description id="ai-zotero-settings-intro" data-l10n-id="ai-zotero-settings-intro"/>
+
+		<groupbox aria-labelledby="ai-zotero-settings-heading">
+			<label><html:h2 id="ai-zotero-settings-heading" data-l10n-id="ai-zotero-settings-heading"/></label>
+			<checkbox id="ai-zotero-enabled" data-l10n-id="ai-zotero-enabled" native="true"/>
+
+			<hbox align="center" class="ai-zotero-form-row">
+				<label id="ai-zotero-provider-label" control="ai-zotero-provider" data-l10n-id="ai-zotero-provider"/>
+				<menulist id="ai-zotero-provider" native="true" flex="1">
+					<menupopup>
+						<menuitem value="mistral" data-l10n-id="ai-zotero-provider-mistral"/>
+						<menuitem value="openrouter" data-l10n-id="ai-zotero-provider-openrouter"/>
+						<menuitem value="agentrouter" data-l10n-id="ai-zotero-provider-agentrouter"/>
+					</menupopup>
+				</menulist>
+			</hbox>
+
+			<hbox align="center" class="ai-zotero-form-row">
+				<label id="ai-zotero-model-label" control="ai-zotero-model" data-l10n-id="ai-zotero-model"/>
+				<html:input id="ai-zotero-model" type="text" autocomplete="off" spellcheck="false" flex="1"/>
+				<button id="ai-zotero-refresh-models" data-l10n-id="ai-zotero-refresh-models"/>
+			</hbox>
+			<description id="ai-zotero-model-status" class="ai-zotero-help-text" data-l10n-id="ai-zotero-model-status"/>
+
+			<hbox align="center" class="ai-zotero-form-row" id="ai-zotero-agentrouter-url-row" hidden="true">
+				<label id="ai-zotero-agentrouter-url-label" control="ai-zotero-agentrouter-url" data-l10n-id="ai-zotero-agentrouter-url"/>
+				<html:input id="ai-zotero-agentrouter-url" type="url" autocomplete="off" spellcheck="false" flex="1"/>
+			</hbox>
+
+			<hbox align="center" class="ai-zotero-form-row">
+				<label id="ai-zotero-detail-label" control="ai-zotero-detail" data-l10n-id="ai-zotero-detail"/>
+				<menulist id="ai-zotero-detail" native="true">
+					<menupopup>
+						<menuitem value="brief" data-l10n-id="ai-zotero-detail-brief"/>
+						<menuitem value="high-level" data-l10n-id="ai-zotero-detail-high-level"/>
+						<menuitem value="detailed" data-l10n-id="ai-zotero-detail-detailed"/>
+					</menupopup>
+				</menulist>
+			</hbox>
+		</groupbox>
+
+		<groupbox aria-labelledby="ai-zotero-credentials-heading">
+			<label><html:h2 id="ai-zotero-credentials-heading" data-l10n-id="ai-zotero-credentials-heading"/></label>
+			<description data-l10n-id="ai-zotero-credentials-intro"/>
+			<html:div class="ai-zotero-credential-grid">
+				<html:label for="ai-zotero-api-key" data-l10n-id="ai-zotero-api-key"/>
+				<html:input id="ai-zotero-api-key" type="password" autocomplete="new-password" spellcheck="false"/>
+				<html:span id="ai-zotero-api-key-status" class="ai-zotero-credential-status" data-l10n-id="ai-zotero-key-not-configured"/>
+				<hbox class="ai-zotero-button-row">
+					<button id="ai-zotero-save-key" data-l10n-id="ai-zotero-save-key"/>
+					<button id="ai-zotero-remove-key" data-l10n-id="ai-zotero-remove-key"/>
+					<button id="ai-zotero-test-connection" data-l10n-id="ai-zotero-test-connection"/>
+				</hbox>
+			</html:div>
+			<description id="ai-zotero-credential-result" class="ai-zotero-help-text" aria-live="polite"/>
+			<description data-l10n-id="ai-zotero-credential-storage-notice"/>
+		</groupbox>
+
+		<groupbox aria-labelledby="ai-zotero-cross-check-settings-heading">
+			<label><html:h2 id="ai-zotero-cross-check-settings-heading" data-l10n-id="ai-zotero-cross-check-settings-heading"/></label>
+			<hbox align="center" class="ai-zotero-form-row">
+				<label id="ai-zotero-concurrency-label" control="ai-zotero-concurrency" data-l10n-id="ai-zotero-concurrency"/>
+				<html:input id="ai-zotero-concurrency" type="number" min="1" max="2" inputmode="numeric"/>
+			</hbox>
+			<hbox align="center" class="ai-zotero-form-row">
+				<label id="ai-zotero-limit-label" control="ai-zotero-limit" data-l10n-id="ai-zotero-limit"/>
+				<html:input id="ai-zotero-limit" type="number" min="1" max="100" inputmode="numeric"/>
+			</hbox>
+			<description data-l10n-id="ai-zotero-cross-check-warning"/>
+		</groupbox>
+
+		<groupbox aria-labelledby="ai-zotero-privacy-heading">
+			<label><html:h2 id="ai-zotero-privacy-heading" data-l10n-id="ai-zotero-privacy-heading"/></label>
+			<description data-l10n-id="ai-zotero-privacy-description"/>
+			<description data-l10n-id="ai-zotero-no-background-upload"/>
+		</groupbox>
+	</vbox>
+</vbox>

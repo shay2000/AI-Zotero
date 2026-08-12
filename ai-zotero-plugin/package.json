@@ -1,0 +1,12 @@
+{
+	"name": "ai-zotero-plugin",
+	"version": "0.1.0",
+	"private": true,
+	"description": "AI for Zotero 9+ bootstrapped plugin source and tests",
+	"license": "AGPL-3.0-or-later",
+	"scripts": {
+		"build": "python3 scripts/build.py",
+		"test": "python3 scripts/run-tests.py",
+		"audit": "python3 scripts/run-tests.py --audit"
+	}
+}

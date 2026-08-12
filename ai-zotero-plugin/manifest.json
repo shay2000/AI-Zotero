@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "AI for Zotero",
+	"description": "Explicit, privacy-aware PDF summaries, explanations, and collection cross-checks for Zotero 9+.",
+	"version": "0.1.0",
+	"author": "Shay Prasad",
+	"homepage_url": "https://github.com/shayprasad/AI-Zotero",
+	"license": "AGPL-3.0-or-later",
+	"applications": {
+		"zotero": {
+			"id": "ai-zotero@shayprasad",
+			"strict_min_version": "9.0"
+		}
+	},
+	"icons": {
+		"48": "icons/ai-summary-24.svg"
+	}
+}

@@ -1,0 +1,110 @@
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+#ai-zotero-preferences-pane {
+	--ai-zotero-field-border: color-mix(in srgb, currentColor 35%, transparent);
+	--ai-zotero-muted: color-mix(in srgb, currentColor 72%, transparent);
+	color: -moz-DialogText;
+	padding-block-end: 1.5rem;
+}
+
+#ai-zotero-preferences-pane .ai-zotero-form-row {
+	gap: .6rem;
+	margin-block: .55rem;
+}
+
+#ai-zotero-preferences-pane .ai-zotero-form-row > label {
+	min-inline-size: 12rem;
+}
+
+#ai-zotero-preferences-pane html|input,
+#ai-zotero-preferences-pane menulist {
+	box-sizing: border-box;
+	min-block-size: 2rem;
+}
+
+#ai-zotero-preferences-pane html|input[type="text"],
+#ai-zotero-preferences-pane html|input[type="url"],
+#ai-zotero-preferences-pane html|input[type="password"],
+#ai-zotero-preferences-pane html|input[type="number"] {
+	background: Canvas;
+	border: 1px solid var(--ai-zotero-field-border);
+	border-radius: .25rem;
+	color: CanvasText;
+	padding: .25rem .45rem;
+}
+
+#ai-zotero-preferences-pane html|input[type="number"] {
+	max-inline-size: 6rem;
+}
+
+#ai-zotero-preferences-pane html|input:focus-visible,
+#ai-zotero-preferences-pane button:focus-visible,
+#ai-zotero-preferences-pane menulist:focus-visible,
+#ai-zotero-preferences-pane checkbox:focus-visible {
+	outline: .15rem solid currentColor;
+	outline-offset: .15rem;
+}
+
+#ai-zotero-preferences-pane .ai-zotero-help-text,
+#ai-zotero-preferences-pane .ai-zotero-credential-status {
+	color: var(--ai-zotero-muted);
+	font-size: .9em;
+	margin-block: .45rem;
+}
+
+#ai-zotero-preferences-pane .ai-zotero-credential-grid {
+	display: grid;
+	gap: .55rem .75rem;
+	grid-template-columns: minmax(10rem, max-content) minmax(12rem, 1fr);
+	margin-block-start: .7rem;
+}
+
+#ai-zotero-preferences-pane .ai-zotero-credential-grid html|input,
+#ai-zotero-preferences-pane .ai-zotero-credential-grid .ai-zotero-credential-status {
+	min-inline-size: 0;
+}
+
+#ai-zotero-preferences-pane .ai-zotero-button-row {
+	gap: .45rem;
+	grid-column: 2;
+	flex-wrap: wrap;
+}
+
+#ai-zotero-preferences-pane description {
+	max-inline-size: 60rem;
+	white-space: normal;
+}
+
+#ai-zotero-preferences-pane [dir="rtl"] .ai-zotero-form-row,
+#ai-zotero-preferences-pane:dir(rtl) .ai-zotero-form-row {
+	direction: rtl;
+}
+
+@media (max-width: 46rem) {
+	#ai-zotero-preferences-pane .ai-zotero-form-row {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	#ai-zotero-preferences-pane .ai-zotero-form-row > label {
+		min-inline-size: auto;
+	}
+
+	#ai-zotero-preferences-pane .ai-zotero-credential-grid {
+		grid-template-columns: 1fr;
+	}
+
+	#ai-zotero-preferences-pane .ai-zotero-button-row {
+		grid-column: 1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#ai-zotero-preferences-pane *,
+	#ai-zotero-preferences-pane *::before,
+	#ai-zotero-preferences-pane *::after {
+		animation-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.001ms !important;
+	}
+}
